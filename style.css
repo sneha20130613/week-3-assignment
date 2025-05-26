@@ -1,0 +1,321 @@
+/* style.css - My Portfolio Project */
+
+/* --- Global Settings & Variables --- */
+:root {
+    /* Define some main colors to easily change the theme later */
+    --primary-text-color: #333333; /* Dark grey for most text */
+    --light-text-color: #f0f0f0;   /* For text on dark backgrounds */
+    --accent-color: #007bff;       /* A nice blue for links and highlights */
+    --accent-hover-color: #0056b3; /* Darker blue for hover */
+
+    --header-footer-bg: #2c3e50; /* A deep, desaturated blue for header/footer */
+    --nav-bg: #34495e;           /* Slightly lighter for the nav bar */
+    --content-section-bg: rgba(255, 255, 255, 0.95); /* Mostly opaque white for content readability */
+
+    --default-font: 'Arial', sans-serif; /* Standard sans-serif font */
+    --code-font: 'Courier New', Courier, monospace;
+}
+
+/* --- Basic Reset --- */
+* {
+    box-sizing: border-box; /* Makes box model easier to manage */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* For smooth scrolling when clicking nav links */
+}
+
+/* --- Body Styling --- */
+body {
+    font-family: var(--default-font);
+    line-height: 1.6; /* Good for readability */
+    color: var(--primary-text-color);
+    background-color: #f4f4f4; /* Fallback background color */
+
+    /* Setting up the main background image for the site */
+    background-image: url('pexels-veeterzy-303383.jpg'); /* Make sure this path is correct! */
+    background-repeat: no-repeat;   /* Don't tile the image */
+    background-size: cover;         /* Cover the whole viewport */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed;   /* Image stays fixed when scrolling */
+
+    display: flex; /* Using flexbox to help with footer positioning */
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* --- General Container for Content Sections --- */
+.container {
+    width: 90%; /* Use percentage for responsiveness */
+    max-width: 960px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the container */
+    /* Padding will be added to sections inside this container */
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    margin-bottom: 15px; /* Space below headings */
+    color: var(--primary-text-color); /* Using our defined text color */
+}
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+
+p {
+    margin-bottom: 1rem; /* Standard space below paragraphs */
+}
+
+a {
+    color: var(--accent-color); /* Use accent color for links */
+    text-decoration: none; /* Remove default underline */
+}
+a:hover {
+    color: var(--accent-hover-color); /* Darken link on hover */
+    text-decoration: underline; /* Add underline on hover for clarity */
+}
+
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 20px; /* Default indentation for lists */
+}
+li {
+    margin-bottom: 8px; /* Space between list items */
+}
+
+hr { /* Horizontal rule for separating content */
+    border: 0;
+    height: 1px;
+    background: #dddddd; /* Light grey line */
+    margin: 25px 0; /* Space above and below the line */
+}
+
+img { /* Basic responsive images */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below image */
+}
+
+/* --- Header Styling --- */
+header {
+    background: var(--header-footer-bg);
+    color: var(--light-text-color);
+    padding: 20px 0;
+    text-align: center;
+}
+header h1 {
+    color: var(--light-text-color); /* Override default h1 color for header */
+    margin-bottom: 5px;
+}
+header p {
+    color: var(--light-text-color);
+    font-size: 1.1rem;
+    opacity: 0.9; /* Slightly transparent subtitle */
+}
+
+/* --- Navigation Bar Styling --- */
+nav {
+    background: var(--nav-bg);
+    padding: 10px 0;
+    display: flex; /* Using flex to arrange nav links */
+    justify-content: center; /* Center nav links */
+    align-items: center;
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens if needed */
+    position: sticky; /* Make nav bar stick to top on scroll */
+    top: 0;
+    z-index: 100; /* Ensure nav is above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+nav a {
+    color: var(--light-text-color);
+    padding: 10px 15px;
+    margin: 5px; /* Space around each nav link */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+nav a:hover {
+    background-color: var(--accent-hover-color); /* Use accent for hover background */
+    text-decoration: none; /* No underline for nav links on hover */
+}
+nav a.active { /* Style for the currently active page link */
+    background-color: var(--accent-color);
+    font-weight: bold;
+}
+nav a.active:hover {
+    background-color: var(--accent-color); /* Keep active color on hover */
+}
+
+/* --- Main Content Area Styling --- */
+main {
+    flex-grow: 1; /* Allows main to take up available space, pushing footer down */
+    padding: 25px 0; /* Padding above and below main content sections */
+}
+main section { /* Styling for individual sections within main */
+    background: var(--content-section-bg);
+    margin-bottom: 20px; /* Space between sections */
+    padding: 20px; /* Inner padding for content */
+    border-radius: 8px; /* Rounded corners for sections */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+main section h2 {
+    margin-top: 0; /* Remove top margin if it's the first element */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eeeeee; /* Separator line for section titles */
+}
+
+/* --- Page-Specific Styles --- */
+
+/* Projects Page - Article Styling */
+#projects-highlight article {
+    background: #f9f9f9; /* Slightly different background for project articles */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+#projects-highlight article h3 {
+    margin-top: 0;
+}
+
+/* Contact Page - Special Background */
+.contact-page-body {
+    /* This class is applied to the <body> tag of contact.html */
+    background-image: url('bts_v_kim_taehyung_pencil_drawing_by_heidrawing_dekypvy-fullview.jpg'); /* Specific BG for contact page */
+    /* Other background properties like size, position, etc., are inherited from the general body style */
+}
+/* The content sections on the contact page will use `var(--content-section-bg)` for readability */
+
+/* Contact Form Styling */
+form label {
+    display: block; /* Make labels take full width */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%; /* Make form fields take full width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: var(--default-font); /* Ensure form fields use main font */
+    font-size: 1rem;
+}
+form textarea {
+    resize: vertical; /* Allow vertical resizing, not horizontal */
+    min-height: 100px; /* Minimum height for textarea */
+}
+form input[type="submit"] {
+    background: var(--primary-text-color); /* Using the dark text color for button */
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+form input[type="submit"]:hover {
+    background: #555555; /* Slightly lighter dark grey on hover */
+}
+
+/* Social media links on Contact page */
+#contact ul { /* Targeting the list in the contact section specifically */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+#contact ul li {
+    margin-bottom: 10px;
+}
+
+/* Report Page Styling */
+.report-content-header { /* For the header part of the report page */
+    text-align: center;
+    margin-bottom: 30px;
+}
+.report-content-header h1 {
+    font-size: 2rem;
+}
+.report-content-header p {
+    font-size: 1.1rem;
+    color: #555555; /* Slightly lighter text for sub-info */
+}
+pre { /* Styling for preformatted text (code blocks) */
+    background-color: #f0f0f0; /* Light grey background for code */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+    font-family: var(--code-font);
+    font-size: 0.9em; /* Slightly smaller font for code */
+    border: 1px solid #dddddd;
+    line-height: 1.5;
+}
+
+/* --- Footer Styling --- */
+footer {
+    background: var(--header-footer-bg);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* This helps push footer to bottom with flexbox on body */
+}
+footer p {
+    margin-bottom: 0; /* Remove default paragraph margin in footer */
+    opacity: 0.9;
+}
+
+/* --- Media Queries for Responsiveness --- */
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column; 
+        align-items: stretch; 
+        position: static; 
+    }
+    nav a {
+        margin: 5px 10%; /* Adjust margin for stacked links */
+        text-align: center;
+        border-bottom: 1px solid #4a6179; /* Separator for stacked links */
+    }
+    nav a:last-child {
+        border-bottom: none; /* Remove border from last link */
+    }
+
+    .container {
+        width: 95%; /* Slightly more width on smaller screens */
+    }
+    main section {
+        padding: 15px; /* Reduce padding a bit */
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    nav a {
+        padding: 8px 10px; /* Adjust padding for smaller nav links */
+        margin: 5px 5%;
+    }
+    form input[type="submit"] {
+        padding: 10px 15px;
+        width: 100%; /* Make submit button full width */
+    }
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.4rem; }
+}

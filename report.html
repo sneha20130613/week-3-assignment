@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Project Report - Sneha Dhungel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sneha Dhungel</h1>
+        <p>Web Developer | Tech Explorer | BTS Enthusiast</p>
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">👩‍🎓 About</a>
+        <a href="projects.html">🛠️ Projects</a>
+        <a href="contact.html">📬 Contact</a>
+        <a href="report.html" class="active">📄 Report</a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section>
+                <div class="report-content-header">
+                    <h1>Project Report</h1>
+                    <p><strong>Student Name:</strong> Sneha Dhungel</p>
+                    <p><strong>Project Title:</strong> Responsive Personal Portfolio Website Using HTML and CSS</p>
+                </div>
+
+                <h2>1. Introduction</h2>
+                <p>This project is a personal portfolio website created using HTML for structure and CSS for styling and responsiveness. The goal was to build a multi-page site that adapts to different screen sizes, showcasing my web development skills. The site uses semantic HTML5 elements for a clean and readable structure.</p>
+            </section>
+
+            <section>
+                <h2>2. Objectives</h2>
+                <ul>
+                    <li>To create a responsive personal portfolio using HTML and CSS.</li>
+                    <li>To ensure the website is accessible and looks good on various devices (desktops, tablets, mobiles).</li>
+                    <li>To use semantic HTML5 elements such as <header>, <nav>, <main>, <section>, <article>, <footer>, etc.</li>
+                    <li>To organize content clearly across multiple pages.</li>
+                    <li>To gain hands-on experience in structuring and styling web pages for responsiveness.</li>
+                    <li>To deploy the website using GitHub Pages and provide a live link.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Pages Included</h2>
+                <article>
+                    <h3>3.1 index.html (Home)</h3>
+                    <p>The main landing page of the portfolio. It includes a welcome message, a brief introduction to myself and the purpose of the site.</p>
+                </article>
+                <article>
+                    <h3>3.2 about.html (About Me)</h3>
+                    <p>This page provides a more detailed biography, my journey into technology, personal background, goals, and interests like my appreciation for BTS which inspires my work ethic.</p>
+                </article>
+                <article>
+                    <h3>3.3 projects.html (Projects)</h3>
+                    <p>Showcases a list of key projects I have worked on, each with a title, a brief description, and a placeholder link to view the project. This section demonstrates practical application of my web development skills.</p>
+                </article>
+                <article>
+                    <h3>3.4 contact.html (Contact)</h3>
+                    <p>Contains a contact form, my email address, phone number, and links to social media profiles, allowing visitors to easily get in touch.</p>
+                </article>
+                <article>
+                    <h3>3.5 report.html (Project Report)</h3>
+                    <p>This current page, which summarizes the project's creation, objectives, structure, responsiveness implementation, and GitHub Pages deployment process.</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>4. Development Process</h2>
+                <p>The development started by outlining the content and structure for each page. Semantic HTML5 elements were used to build the basic framework. An external CSS file (<code>style.css</code>) was then created to apply styling and ensure responsiveness across all pages. The design focused on clarity, ease of navigation, and a consistent look and feel. Iterative testing on different screen sizes was performed to refine the responsive behavior.</p>
+            </section>
+
+            <section>
+                <h2>5. Responsiveness and Styling</h2>
+                <p>The website was made responsive using CSS. Key techniques include:</p>
+                <ul>
+                    <li><strong>Viewport Meta Tag:</strong> The <code><meta name="viewport" content="width=device-width, initial-scale=1.0"></code> tag is included in all HTML files to ensure proper scaling and rendering on mobile devices.</li>
+                    <li><strong>Fluid Layouts:</strong> Using percentages and flexible box (flexbox) for elements like the navigation bar to adapt to screen width. Main content areas use a `max-width` and `margin: auto` for centering and adaptability.</li>
+                    <li><strong>Media Queries:</strong> CSS media queries are used to apply different styles based on screen size. For example, the navigation bar stacks vertically on smaller screens (tablets and mobiles) for better usability. Font sizes and padding are also adjusted.</li>
+                    <li><strong>Responsive Images:</strong> Images are styled with <code>max-width: 100%; height: auto;</code> to ensure they scale down proportionally within their containers without distortion.</li>
+                    <li><strong>External CSS:</strong> All styling is managed through an external stylesheet (<code>style.css</code>). This includes global styles for typography, colors, and layout, as well as specific styles for different sections and pages (e.g., the background image on the contact page, project article styling).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>6. GitHub Pages Deployment</h2>
+                <p>The portfolio website is hosted on GitHub Pages. The deployment process involved the following steps:</p>
+                <ol>
+                    <li><strong>Create a GitHub Repository:</strong> A new public repository named "portfolio" was created on my GitHub account (github.com/YOUR_USERNAME).</li>
+                    <li><strong>Initialize Git and Add Project Files:</strong> A local Git repository was initialized in the project folder. All HTML files (<code>index.html</code>, <code>about.html</code>, <code>projects.html</code>, <code>contact.html</code>, <code>report.html</code>), the CSS file (<code>style.css</code>), and any images (e.g., the background image for the contact page) were added to the staging area.</li>
+                    <li><strong>Commit and Push Files:</strong> The files were committed to the local Git repository. The local repository was then linked to the remote "portfolio" repository on GitHub, and the `main` branch was pushed.
+                        <pre>
+git init
+git add .
+git commit -m "Initial commit of responsive portfolio website"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
+git push -u origin main
+                        </pre>
+                        (Replace `YOUR_USERNAME` with your actual GitHub username.)
+                    </li>
+                    <li><strong>Enable GitHub Pages:</strong>
+                        <ul>
+                            <li>Navigated to the "portfolio" repository on GitHub.</li>
+                            <li>Clicked on the "Settings" tab.</li>
+                            <li>In the left sidebar, selected "Pages" under the "Code and automation" section.</li>
+                            <li>Under "Build and deployment," for "Source," selected "Deploy from a branch."</li>
+                            <li>Under "Branch," selected "main" (or your default branch) and the <code>/(root)</code> folder.</li>
+                            <li>Clicked "Save."</li>
+                        </ul>
+                    </li>
+                    <li><strong>Access Live Site:</strong> After a few minutes for GitHub to build and deploy the site, it became available online. The live link is updated periodically if changes are pushed.</li>
+                </ol>
+                <p><strong>Live GitHub Pages Link:</strong> <a href="https://YOUR_USERNAME.github.io/portfolio/" target="_blank" rel="noopener noreferrer">https://YOUR_USERNAME.github.io/portfolio/</a><br>
+                <em>(Note: Please replace YOUR_USERNAME with your actual GitHub username after deploying.)</em></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Sneha Dhungel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
